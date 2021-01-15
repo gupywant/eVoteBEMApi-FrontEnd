@@ -9,6 +9,15 @@ const router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      name: 'Landing',
+      path: '/Landing',
+      component: () => import('@/views/dashboard/pages/Landing'),
+      meta: {
+        rule: 'guest',
+        requiresAuth: true,
+      },
+    },
+    {
       name: 'Login',
       path: '/Login',
       component: () => import('@/views/dashboard/pages/Login'),
