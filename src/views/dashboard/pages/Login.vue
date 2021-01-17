@@ -59,8 +59,9 @@
               <v-card-actions :class="{ 'pa-3': $vuetify.breakpoint.smAndUp }">
                 <v-btn
                   color="info"
+                  href="\Landing"
                 >
-                  Forgot password?
+                  Go to home
                 </v-btn>
                 <v-spacer />
                 <v-btn
