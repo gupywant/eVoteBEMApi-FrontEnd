@@ -9,6 +9,33 @@ const router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      name: 'Landing',
+      path: '/Landing',
+      component: () => import('@/views/dashboard/pages/Landing'),
+      meta: {
+        rule: 'guest',
+        requiresAuth: true,
+      },
+    },
+    {
+      name: 'News',
+      path: '/News',
+      component: () => import('@/views/dashboard/pages/News'),
+      meta: {
+        rule: 'guest',
+        requiresAuth: true,
+      },
+    },
+    {
+      name: 'NewsContent',
+      path: '/NewsContent',
+      component: () => import('@/views/dashboard/pages/NewsContent'),
+      meta: {
+        rule: 'guest',
+        requiresAuth: true,
+      },
+    },
+    {
       name: 'Login',
       path: '/Login',
       component: () => import('@/views/dashboard/pages/Login'),
@@ -94,7 +121,7 @@ router.beforeEach((to, from, next) => {
       next()
     } else {
       localStorage.removeItem('token')
-      next({ name: 'Login' })
+      next({ name: 'Landing' })
     }
   } else if (to.meta.requiresAuth) {
     if (store.getters.isLogedIn) {
