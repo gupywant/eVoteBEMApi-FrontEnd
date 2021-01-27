@@ -4,203 +4,213 @@
     fluid
     tag="section"
   >
-    <v-row>
+    <v-row justify="center">
       <v-col
         cols="12"
         lg="6"
-      >
-        <base-material-chart-card
-          :data="emailsSubscriptionChart.data"
-          :options="emailsSubscriptionChart.options"
-          :responsive-options="emailsSubscriptionChart.responsiveOptions"
-          color="#E91E63"
-          hover-reveal
-          type="Bar"
-        >
-          <template v-slot:reveal-actions>
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  color="info"
-                  icon
-                  v-on="on"
-                >
-                  <v-icon
-                    color="info"
-                  >
-                    mdi-refresh
-                  </v-icon>
-                </v-btn>
-              </template>
-
-              <span>Refresh</span>
-            </v-tooltip>
-
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  light
-                  icon
-                  v-on="on"
-                >
-                  <v-icon>mdi-pencil</v-icon>
-                </v-btn>
-              </template>
-
-              <span>Change Date</span>
-            </v-tooltip>
-          </template>
-
-          <h4 class="card-title font-weight-light mt-2 ml-2">
-            Website Views
-          </h4>
-
-          <p class="d-inline-flex font-weight-light ml-2 mt-1">
-            Last Campaign Performance
-          </p>
-
-          <template v-slot:actions>
-            <v-icon
-              class="mr-1"
-              small
-            >
-              mdi-clock-outline
-            </v-icon>
-            <span class="caption grey--text font-weight-light">updated 10 minutes ago</span>
-          </template>
-        </base-material-chart-card>
-      </v-col>
-
-      <v-col
-        cols="12"
-        lg="6"
-      >
-        <base-material-chart-card
-          :data="dailySalesChart.data"
-          :options="dailySalesChart.options"
-          color="success"
-          hover-reveal
-          type="Line"
-        >
-          <template v-slot:reveal-actions>
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  color="info"
-                  icon
-                  v-on="on"
-                >
-                  <v-icon
-                    color="info"
-                  >
-                    mdi-refresh
-                  </v-icon>
-                </v-btn>
-              </template>
-
-              <span>Refresh</span>
-            </v-tooltip>
-
-            <v-tooltip bottom>
-              <template v-slot:activator="{ attrs, on }">
-                <v-btn
-                  v-bind="attrs"
-                  light
-                  icon
-                  v-on="on"
-                >
-                  <v-icon>mdi-pencil</v-icon>
-                </v-btn>
-              </template>
-
-              <span>Change Date</span>
-            </v-tooltip>
-          </template>
-
-          <h4 class="card-title font-weight-light mt-2 ml-2">
-            Daily Sales
-          </h4>
-
-          <p class="d-inline-flex font-weight-light ml-2 mt-1">
-            <v-icon
-              color="green"
-              small
-            >
-              mdi-arrow-up
-            </v-icon>
-            <span class="green--text">55%</span>&nbsp;
-            increase in today's sales
-          </p>
-
-          <template v-slot:actions>
-            <v-icon
-              class="mr-1"
-              small
-            >
-              mdi-clock-outline
-            </v-icon>
-            <span class="caption grey--text font-weight-light">updated 4 minutes ago</span>
-          </template>
-        </base-material-chart-card>
-      </v-col>
-      <div id="chart">
-        <apexchart
-          type="pie"
-          width="380"
-          :options="chartOptions"
-          :series="series"
-        />
-      </div>
-      <v-col
-        cols="12"
-        md="6"
       >
         <base-material-card
-          color="warning"
+          color="success"
           class="px-5 py-3"
         >
           <template v-slot:heading>
-            <div class="display-2 font-weight-light">
-              Status Mahasiswa
-            </div>
-
-            <div class="subtitle-1 font-weight-light">
-              New employees on 15th September, 2016
+            <div class="display-2 font-weight-light text-center">
+              Hasil Perolehan Sementara
             </div>
           </template>
-          <v-card-text>
-            <v-data-table
-              :headers="headers"
-              :items="items"
-            />
-          </v-card-text>
+          <bar-chart />
         </base-material-card>
       </v-col>
       <v-col
         cols="12"
-        md="6"
+        lg="6"
       >
-        <base-material-card
-          color="success"
-          class="px-5 py-3"
-        >
+        <base-material-card>
           <template v-slot:heading>
-            <div class="display-2 font-weight-light">
-              Status Pasangan Calon
+            <div class="display-2 font-weight-light text-center">
+              Status Mahasiswa
             </div>
 
-            <div class="subtitle-1 font-weight-light">
-              New employees on 15th September, 2016
+            <div class="subtitle-1 font-weight-light text-center">
+              Data Mahasiswa Universitas Gunadarma
             </div>
           </template>
+
           <v-card-text>
-            <v-data-table
-              :headers="headers"
-              :items="items"
-            />
+            <template>
+              <v-data-table
+                :headers="headers1"
+                :items="desserts"
+                :items-per-page="5"
+                class="elevation-1"
+              />
+            </template>
+          </v-card-text>
+        </base-material-card>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col
+        cols="12"
+      >
+        <base-material-card>
+          <template v-slot:heading>
+            <div class="display-2 font-weight-light text-center">
+              Status Kandidat
+            </div>
+
+            <div class="subtitle-1 font-weight-light text-center">
+              Data Kandidat Calon Ketua / Wakil Ketua BEM FIKTI Universitas Gunadarma
+            </div>
+          </template>
+
+          <v-card-text>
+            <template>
+              <v-data-table
+                :headers="headers"
+                :items="desserts"
+                :items-per-page="5"
+                class="elevation-1"
+              >
+                <template v-slot:top>
+                  <v-dialog
+                    v-model="dialog"
+                    max-width="500px"
+                  >
+                    <v-card>
+                      <v-card-title>
+                        <span class="headline">{{ formTitle }}</span>
+                      </v-card-title>
+
+                      <v-card-text>
+                        <v-container>
+                          <v-row>
+                            <v-col
+                              cols="12"
+                              sm="6"
+                              md="4"
+                            >
+                              <v-text-field
+                                v-model="editedItem.name"
+                                label="Dessert name"
+                              />
+                            </v-col>
+                            <v-col
+                              cols="12"
+                              sm="6"
+                              md="4"
+                            >
+                              <v-text-field
+                                v-model="editedItem.calories"
+                                label="Calories"
+                              />
+                            </v-col>
+                            <v-col
+                              cols="12"
+                              sm="6"
+                              md="4"
+                            >
+                              <v-text-field
+                                v-model="editedItem.fat"
+                                label="Fat (g)"
+                              />
+                            </v-col>
+                            <v-col
+                              cols="12"
+                              sm="6"
+                              md="4"
+                            >
+                              <v-text-field
+                                v-model="editedItem.carbs"
+                                label="Carbs (g)"
+                              />
+                            </v-col>
+                            <v-col
+                              cols="12"
+                              sm="6"
+                              md="4"
+                            >
+                              <v-text-field
+                                v-model="editedItem.protein"
+                                label="Protein (g)"
+                              />
+                            </v-col>
+                          </v-row>
+                        </v-container>
+                      </v-card-text>
+
+                      <v-card-actions>
+                        <v-spacer />
+                        <v-btn
+                          color="blue darken-1"
+                          text
+                          @click="close"
+                        >
+                          Cancel
+                        </v-btn>
+                        <v-btn
+                          color="blue darken-1"
+                          text
+                          @click="save"
+                        >
+                          Save
+                        </v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-dialog>
+                  <v-dialog
+                    v-model="dialogDelete"
+                    max-width="500px"
+                  >
+                    <v-card>
+                      <v-card-title>
+                        Are you sure you want to delete this item?
+                      </v-card-title>
+                      <v-card-actions>
+                        <v-spacer />
+                        <v-btn
+                          color="blue darken-1"
+                          text
+                          @click="closeDelete"
+                        >
+                          Cancel
+                        </v-btn>
+                        <v-btn
+                          color="blue darken-1"
+                          text
+                          @click="deleteItemConfirm"
+                        >
+                          OK
+                        </v-btn>
+                        <v-spacer />
+                      </v-card-actions>
+                    </v-card>
+                  </v-dialog>
+                </template>
+                <template v-slot:item.actions="{ item }">
+                  <v-icon
+                    small
+                    class="mr-2"
+                    @click="editItem(item)"
+                  >
+                    {{ icons.mdiEye }}
+                  </v-icon>
+                  <v-icon
+                    small
+                    class="mr-2"
+                    @click="editItem(item)"
+                  >
+                    {{ icons.mdiPencil }}
+                  </v-icon>
+                  <v-icon
+                    small
+                    @click="deleteItem(item)"
+                  >
+                    {{ icons.mdiDelete }}
+                  </v-icon>
+                </template>
+              </v-data-table>
+            </template>
           </v-card-text>
         </base-material-card>
       </v-col>
@@ -209,233 +219,188 @@
 </template>
 
 <script>
-  import ApexCharts from 'apexcharts'
+  import {
+    mdiPencil,
+    mdiDelete,
+    mdiEye,
+  } from '@mdi/js'
+  import BarChart from './pages/BarChart.vue'
   export default {
     name: 'DashboardDashboard',
+    components: { BarChart },
     data () {
       return {
         el: '#chart',
-        components: {
-          apexchart: ApexCharts,
-        },
-        data: {
-          series: [44, 55, 13, 43, 22],
-          chartOptions: {
-            chart: {
-              width: 380,
-              type: 'pie',
-            },
-            labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
-            responsive: [{
-              breakpoint: 480,
-              options: {
-                chart: {
-                  width: 200,
-                },
-                legend: {
-                  position: 'bottom',
-                },
-              },
-            }],
+        headers1: [
+          {
+            text: 'NPM',
+            sortable: true,
+            value: 'npm',
           },
-        },
-        dailySalesChart: {
-          data: {
-            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-            series: [
-              [12, 17, 7, 17, 23, 18, 38],
-            ],
+          { text: 'Nama Mahasiswa', value: 'name', sortable: true },
+        ],
+        desserts: [
+          {
+            npm: '12345678',
+            name: 'Frozen Yogurt',
+            date: '25/01/2021',
+            status: 'Sudah Vote',
+            total: '75',
           },
-          options: {
-            lineSmooth: this.$chartist.Interpolation.cardinal({
-              tension: 0,
-            }),
-            low: 0,
-            high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-            chartPadding: {
-              top: 0,
-              right: 0,
-              bottom: 0,
-              left: 0,
-            },
+          {
+            npm: '12345678',
+            name: 'Ice cream sandwich',
+            date: '-',
+            status: 'Belum Vote',
+            total: '75',
           },
-        },
-        dataCompletedTasksChart: {
-          data: {
-            labels: ['12am', '3pm', '6pm', '9pm', '12pm', '3am', '6am', '9am'],
-            series: [
-              [230, 750, 450, 300, 280, 240, 200, 190],
-            ],
+          {
+            npm: '12345678',
+            name: 'Eclair',
+            date: '25/01/2021',
+            status: 'Sudah Vote',
+            total: '75',
           },
-          options: {
-            lineSmooth: this.$chartist.Interpolation.cardinal({
-              tension: 0,
-            }),
-            low: 0,
-            high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-            chartPadding: {
-              top: 0,
-              right: 0,
-              bottom: 0,
-              left: 0,
-            },
+          {
+            npm: '12345678',
+            name: 'Cupcake',
+            date: '-',
+            status: 'Belum Vote',
+            total: '75',
           },
-        },
-        emailsSubscriptionChart: {
-          data: {
-            labels: ['Ja', 'Fe', 'Ma', 'Ap', 'Mai', 'Ju', 'Jul', 'Au', 'Se', 'Oc', 'No', 'De'],
-            series: [
-              [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
-
-            ],
+          {
+            npm: '12345678',
+            name: 'Gingerbread',
+            date: '25/01/2021',
+            status: 'Sudah Vote',
+            total: '75',
           },
-          options: {
-            axisX: {
-              showGrid: false,
-            },
-            low: 0,
-            high: 1000,
-            chartPadding: {
-              top: 0,
-              right: 5,
-              bottom: 0,
-              left: 0,
-            },
+          {
+            npm: '12345678',
+            name: 'Jelly bean',
+            date: '-',
+            status: 'Belum Vote',
+            total: '75',
           },
-          responsiveOptions: [
-            ['screen and (max-width: 640px)', {
-              seriesBarDistance: 5,
-              axisX: {
-                labelInterpolationFnc: function (value) {
-                  return value[0]
-                },
-              },
-            }],
-          ],
-        },
+          {
+            npm: '12345678',
+            name: 'Lollipop',
+            date: '25/01/2021',
+            status: 'Sudah Vote',
+            total: '75',
+          },
+          {
+            npm: '12345678',
+            name: 'Honeycomb',
+            date: '-',
+            status: 'Belum Vote',
+            total: '75',
+          },
+          {
+            npm: '12345678',
+            name: 'Donut',
+            date: '25/01/2021',
+            status: 'Sudah Vote',
+            total: '75',
+          },
+          {
+            npm: '12345678',
+            name: 'KitKat',
+            date: '-',
+            status: 'Belum Vote',
+            total: '75',
+          },
+        ],
+        dialog: false,
+        dialogDelete: false,
         headers: [
           {
-            sortable: false,
-            text: 'ID',
-            value: 'id',
+            text: 'No',
+            sortable: true,
+            value: 'npm',
+            align: 'start',
           },
-          {
-            sortable: false,
-            text: 'Name',
-            value: 'name',
-          },
-          {
-            sortable: false,
-            text: 'Salary',
-            value: 'salary',
-            align: 'right',
-          },
-          {
-            sortable: false,
-            text: 'Country',
-            value: 'country',
-            align: 'right',
-          },
-          {
-            sortable: false,
-            text: 'City',
-            value: 'city',
-            align: 'right',
-          },
+          { text: 'Nama Ketua', value: 'name' },
+          { text: 'NPM', value: 'npm' },
+          { text: 'Kelas', value: 'name' },
+          { text: 'Nama Wakil', value: 'name' },
+          { text: 'NPM', value: 'npm' },
+          { text: 'Kelas', value: 'total' },
+          { text: 'Total', value: 'total' },
+          { text: 'Aksi', value: 'actions' },
         ],
-        items: [
-          {
-            id: 1,
-            name: 'Dakota Rice',
-            country: 'Niger',
-            city: 'Oud-Tunrhout',
-            salary: '$35,738',
-          },
-          {
-            id: 2,
-            name: 'Minerva Hooper',
-            country: 'Curaçao',
-            city: 'Sinaai-Waas',
-            salary: '$23,738',
-          },
-          {
-            id: 3,
-            name: 'Sage Rodriguez',
-            country: 'Netherlands',
-            city: 'Overland Park',
-            salary: '$56,142',
-          },
-          {
-            id: 4,
-            name: 'Philip Chanley',
-            country: 'Korea, South',
-            city: 'Gloucester',
-            salary: '$38,735',
-          },
-          {
-            id: 5,
-            name: 'Doris Greene',
-            country: 'Malawi',
-            city: 'Feldkirchen in Kārnten',
-            salary: '$63,542',
-          },
-        ],
-        tabs: 0,
-        tasks: {
-          0: [
-            {
-              text: 'Sign contract for "What are conference organizers afraid of?"',
-              value: true,
-            },
-            {
-              text: 'Lines From Great Russian Literature? Or E-mails From My Boss?',
-              value: false,
-            },
-            {
-              text: 'Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit',
-              value: false,
-            },
-            {
-              text: 'Create 4 Invisible User Experiences you Never Knew About',
-              value: true,
-            },
-          ],
-          1: [
-            {
-              text: 'Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit',
-              value: true,
-            },
-            {
-              text: 'Sign contract for "What are conference organizers afraid of?"',
-              value: false,
-            },
-          ],
-          2: [
-            {
-              text: 'Lines From Great Russian Literature? Or E-mails From My Boss?',
-              value: false,
-            },
-            {
-              text: 'Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit',
-              value: true,
-            },
-            {
-              text: 'Sign contract for "What are conference organizers afraid of?"',
-              value: true,
-            },
-          ],
+        editedIndex: -1,
+        editedItem: {
+          name: '',
+          calories: 0,
+          fat: 0,
+          carbs: 0,
+          protein: 0,
         },
-        list: {
-          0: false,
-          1: false,
-          2: false,
+        defaultItem: {
+          name: '',
+          calories: 0,
+          fat: 0,
+          carbs: 0,
+          protein: 0,
         },
+        icons: {
+          mdiPencil,
+          mdiDelete,
+          mdiEye,
+        },
+        watch: {
+          dialog (val) {
+            val || this.close()
+          },
+          dialogDelete (val) {
+            val || this.closeDelete()
+          },
+        },
+        news: [],
       }
     },
-
     methods: {
-      complete (index) {
-        this.list[index] = !this.list[index]
+      editItem (item) {
+        this.editedIndex = this.desserts.indexOf(item)
+        this.editedItem = Object.assign({}, item)
+        this.dialog = true
+      },
+
+      deleteItem (item) {
+        this.editedIndex = this.desserts.indexOf(item)
+        this.editedItem = Object.assign({}, item)
+        this.dialogDelete = true
+      },
+
+      deleteItemConfirm () {
+        this.desserts.splice(this.editedIndex, 1)
+        this.closeDelete()
+      },
+
+      close () {
+        this.dialog = false
+        this.$nextTick(() => {
+          this.editedItem = Object.assign({}, this.defaultItem)
+          this.editedIndex = -1
+        })
+      },
+
+      closeDelete () {
+        this.dialogDelete = false
+        this.$nextTick(() => {
+          this.editedItem = Object.assign({}, this.defaultItem)
+          this.editedIndex = -1
+        })
+      },
+
+      save () {
+        if (this.editedIndex > -1) {
+          Object.assign(this.desserts[this.editedIndex], this.editedItem)
+        } else {
+          this.desserts.push(this.editedItem)
+        }
+        this.close()
       },
     },
   }

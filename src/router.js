@@ -14,7 +14,6 @@ const router = new Router({
       component: () => import('@/views/dashboard/pages/Landing'),
       meta: {
         rule: 'guest',
-        requiresAuth: true,
       },
     },
     {
@@ -24,6 +23,22 @@ const router = new Router({
       meta: {
         rule: 'guest',
         requiresAuth: true,
+      },
+    },
+    {
+      name: 'News',
+      path: '/News',
+      component: () => import('@/views/dashboard/pages/News'),
+      meta: {
+        rule: 'guest',
+      },
+    },
+    {
+      name: 'NewsContent',
+      path: '/NewsContent',
+      component: () => import('@/views/dashboard/pages/NewsContent'),
+      meta: {
+        rule: 'guest',
       },
     },
     {
@@ -64,34 +79,6 @@ const router = new Router({
           path: 'components/votes',
           component: () => import('@/views/dashboard/component/Votes'),
         },
-        {
-          name: 'Icons',
-          path: 'components/icons',
-          component: () => import('@/views/dashboard/component/Icons'),
-        },
-        {
-          name: 'Typography',
-          path: 'components/typography',
-          component: () => import('@/views/dashboard/component/Typography'),
-        },
-        // Tables
-        {
-          name: 'Regular Tables',
-          path: 'tables/regular-tables',
-          component: () => import('@/views/dashboard/tables/RegularTables'),
-        },
-        // Maps
-        {
-          name: 'Google Maps',
-          path: 'maps/google-maps',
-          component: () => import('@/views/dashboard/maps/GoogleMaps'),
-        },
-        // Upgrade
-        {
-          name: 'Upgrade',
-          path: 'upgrade',
-          component: () => import('@/views/dashboard/Upgrade'),
-        },
       ],
     },
   ],
@@ -103,7 +90,7 @@ router.beforeEach((to, from, next) => {
       next()
     } else {
       localStorage.removeItem('token')
-      next({ name: 'Login' })
+      next({ name: 'Landing' })
     }
   } else if (to.meta.requiresAuth) {
     if (store.getters.isLogedIn) {
