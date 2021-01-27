@@ -14,6 +14,25 @@ const router = new Router({
       component: () => import('@/views/dashboard/pages/Landing'),
       meta: {
         rule: 'guest',
+        requiresAuth: true,
+      },
+    },
+    {
+      name: 'News',
+      path: '/News',
+      component: () => import('@/views/dashboard/pages/News'),
+      meta: {
+        rule: 'guest',
+        requiresAuth: true,
+      },
+    },
+    {
+      name: 'NewsContent',
+      path: '/NewsContent',
+      component: () => import('@/views/dashboard/pages/NewsContent'),
+      meta: {
+        rule: 'guest',
+        requiresAuth: true,
       },
     },
     {
