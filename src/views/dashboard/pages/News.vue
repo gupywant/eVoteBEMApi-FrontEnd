@@ -80,9 +80,7 @@
                 >
                   <v-col cols="10">
                     <v-container style="margin-top:-15px; margin-bottom:-15px;">
-                      <v-row
-                        align="center"
-                      >
+                      <v-row align="center">
                         <v-col cols="12">
                           <h1
                             align="center"
@@ -92,14 +90,16 @@
                           </h1>
                           <!-- Pengumuman -->
                           <template>
-                            <v-card
-                              class="mx-auto"
-                            >
+                            <v-card class="mx-auto">
                               <v-card-text>
-                                <h1 class="mb-6">Word of the Day</h1>
+                                <h1 class="mb-6">
+                                  Judul
+                                </h1>
                                 <div class="text--primary">
-                                  relating to or dependent on charity; charitable.
-                                  "an eleemosynary educational institution."
+                                  Sinopsis
+                                </div>
+                                <div class="grey--text mt-4 subtitle-1">
+                                  Creator - Created at
                                 </div>
                               </v-card-text>
                               <v-card-actions>
@@ -108,7 +108,31 @@
                                   color="teal accent-4"
                                   href="/NewsContent"
                                 >
-                                  Learn More
+                                  Selengkapnya
+                                </v-btn>
+                              </v-card-actions>
+                            </v-card>
+                          </template>
+                          <template>
+                            <v-card class="mx-auto">
+                              <v-card-text>
+                                <h1 class="mb-6">
+                                  Judul
+                                </h1>
+                                <div class="text--primary">
+                                  Sinopsis
+                                </div>
+                                <div class="grey--text mt-4 subtitle-1">
+                                  Creator - Created at
+                                </div>
+                              </v-card-text>
+                              <v-card-actions>
+                                <v-btn
+                                  text
+                                  color="teal accent-4"
+                                  href="/NewsContent"
+                                >
+                                  Selengkapnya
                                 </v-btn>
                               </v-card-actions>
                             </v-card>
@@ -294,9 +318,7 @@
 <script>
   export default {
     name: 'App',
-    components: {
-    },
-
+    components: {},
     data: function () {
       return {
         reveal: false,

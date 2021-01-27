@@ -59,9 +59,9 @@
               <v-card-actions :class="{ 'pa-3': $vuetify.breakpoint.smAndUp }">
                 <v-btn
                   color="info"
-                  href="\Landing"
+                  href="/Landing"
                 >
-                  Go to home
+                  Go to Home
                 </v-btn>
                 <v-spacer />
                 <v-btn
@@ -78,30 +78,6 @@
                 </v-btn>
               </v-card-actions>
             </v-card>
-          </v-col>
-          <v-col
-            sm="12"
-            md="6"
-            offset-md="3"
-          >
-            <v-row
-              align="center"
-              justify="space-between"
-            >
-              <p
-                class="caption my-3"
-              >
-                <a href="#">Privacy Policy</a>
-                |
-                <a href="#">Terms of Service</a>
-              </p>
-              <p
-                class="caption my-3"
-              >
-                Powered by
-                <a href="#">StaffCircle</a>
-              </p>
-            </v-row>
           </v-col>
         </v-row>
       </v-container>
@@ -126,7 +102,8 @@
           username: this.username,
           password: this.password,
         }
-        this.$store.dispatch('login', payload)
+        this.$store
+          .dispatch('login', payload)
           .then(() => {
             this.isLoading = false
             setTimeout(() => (this.isLoading = false), 3000)

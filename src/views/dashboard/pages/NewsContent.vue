@@ -80,9 +80,7 @@
                 >
                   <v-col cols="10">
                     <v-container style="margin-top:-15px; margin-bottom:-15px;">
-                      <v-row
-                        align="center"
-                      >
+                      <v-row align="center">
                         <v-col cols="12">
                           <h1
                             align="center"
@@ -92,15 +90,28 @@
                           </h1>
                           <!-- List Pengumuman -->
                           <div class="text--primary text-justify my-5">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos repudiandae ducimus est exercitationem itaque optio at consequatur eveniet fuga illum totam aspernatur, ex quis, accusamus nam molestiae alias, rerum debitis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis cumque dolores illo? A, accusamus. Corporis soluta, exercitationem mollitia dolor aliquam praesentium rem tempore in repellendus quos, quo consequatur debitis incidunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur repudiandae iure iusto enim? Non consectetur minima, nulla, asperiores beatae dolor facilis quo, tempora repellat expedita ab quam officiis laborum ducimus!
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Eos repudiandae ducimus est exercitationem
+                            itaque optio at consequatur eveniet fuga illum totam
+                            aspernatur, ex quis, accusamus nam molestiae alias,
+                            rerum debitis. Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Blanditiis cumque
+                            dolores illo? A, accusamus. Corporis soluta,
+                            exercitationem mollitia dolor aliquam praesentium
+                            rem tempore in repellendus quos, quo consequatur
+                            debitis incidunt! Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Consequuntur
+                            repudiandae iure iusto enim? Non consectetur minima,
+                            nulla, asperiores beatae dolor facilis quo, tempora
+                            repellat expedita ab quam officiis laborum ducimus!
                           </div>
                           <v-row justify="end">
-                          <v-btn
-                            color="primary"
-                            href="News"
-                          >
-                            Back
-                          </v-btn>
+                            <v-btn
+                              color="primary"
+                              href="News"
+                            >
+                              Back
+                            </v-btn>
                           </v-row>
                           <!-- Tutup List Pengumuman -->
                         </v-col>
@@ -283,9 +294,7 @@
 <script>
   export default {
     name: 'App',
-    components: {
-    },
-
+    components: {},
     data: function () {
       return {
         reveal: false,
